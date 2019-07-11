@@ -12,7 +12,7 @@ from mtcnn.data_preprocess.utils import IoU
 
 prefix = ''
 anno_file = "./anno_store/anno_train.txt"
-im_dir = "./data_set/face_detection/WIDERFACE/WIDER_train/WIDER_train/images"
+im_dir = "./data_set/face_detection/WIDERFACE/WIDER_train/images"
 pos_save_dir = "./data_set/train/12/positive"
 part_save_dir = "./data_set/train/12/part"
 neg_save_dir = './data_set/train/12/negative'
@@ -149,6 +149,7 @@ for annotation in annotations:
                 d_idx += 1
         box_idx += 1
         print("%s images done, pos: %s part: %s neg: %s" % (idx, p_idx, d_idx, n_idx))
+    import pdb; pdb.set_trace()
 
 f1.close()
 f2.close()

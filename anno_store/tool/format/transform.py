@@ -10,10 +10,10 @@ import time
 """
 
 #wider face original images path
-path_to_image = './data_set/face_detection/WIDERFACE/WIDER_train/WIDER_train/images'
+path_to_image = './data_set/face_detection/WIDERFACE/WIDER_train/images'
 
 #matlab file path
-file_to_label = './data_set/face_detection/WIDERFACE/wider_face_split/wider_face_split/wider_face_train.mat'
+file_to_label = './data_set/face_detection/WIDERFACE/wider_face_split/wider_face_train.mat'
 
 #target file path
 target_file = './anno_store/anno_train.txt'
@@ -25,7 +25,6 @@ box_count = 0
 
 print('start transforming....')
 t = time.time()
-
 with open(target_file, 'w+') as f:
     # press ctrl-C to stop the process
     for data in wider.next():
