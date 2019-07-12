@@ -25,7 +25,9 @@ class LossFn:
         pred_label = torch.squeeze(pred_label)
         gt_label = torch.squeeze(gt_label)
         # get the mask element which >= 0, only 0 and 1 can effect the detection loss
+        # tensor([1,0,-1,1]) -> tensor([1,1,0,1])
         mask = torch.ge(gt_label,0)
+        # ラベルが0以上の結果だけloss計算
         valid_gt_label = torch.masked_select(gt_label,mask)
         valid_pred_label = torch.masked_select(pred_label,mask)
         return self.loss_cls(valid_pred_label,valid_gt_label)*self.cls_factor
